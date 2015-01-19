@@ -47,6 +47,13 @@ PSCoachMark *buttonMark = [PSCoachMark showCoachMarkAddedTo:_infoButton withAttr
 buttonMark.markColor = [UIColor greenColor];
 buttonMark.margin = 5;
 buttonMark.width = 120;
+
+// check if coach mark isHidden
+if (buttonMark.isHidden) {
+    [buttonMark show];
+} else {
+	[buttonMark hideWithAnimation:YES];
+}
 ```
 
 For more examples, take a look at the demo project in this repository.
