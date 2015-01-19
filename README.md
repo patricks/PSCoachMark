@@ -1,2 +1,2 @@
 # PSCoachMark
-Add a coach marks to a UIView
+Add a coach mark to any UIView
