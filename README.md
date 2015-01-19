@@ -21,3 +21,37 @@ Alternatively you can directly add the `PSCoachMark.h` and `PSCoachMark.m` sourc
 1. Download the [latest code version](https://github.com/patricks/PSCoachMark/archive/master.zip) or add the repository as a git submodule to your git-tracked project. 
 2. Open your project in Xcode, then drag and drop `PSCoachMark.h` and `PSCoachMark.m` onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project. 
 3. Include PSCoachMark wherever you need it with `#import "PSCoachMark.h"`.
+
+## Usage
+
+Create a normal coach mark which disappears after 5 seconds.
+
+```objective-c
+
+	NSAttributedString *txtString = [[NSAttributedString alloc] initWithString:@"Hello World" attributes:attributes];
+	
+	PSCoachMark *infoMark = [PSCoachMark showCoachMarkAddedTo:self.view withAttributedText:txtString withMode:PSCoachMarkModeNormal];
+    infoMark.markColor = [UIColor blueColor];
+    infoMark.width = 250;
+    infoMark.height = 100;
+    
+    // hide after 5 seconds with animation
+    [infoMark hideWithAnimation:YES afterDelay:5];
+```
+
+Create a coach mark over a UIButton
+
+```objective-c
+PSCoachMark *buttonMark = [PSCoachMark showCoachMarkAddedTo:_infoButton withAttributedText:buttonString withMode:PSCoachMarkModeAbove];
+buttonMark.markColor = testBlue;
+buttonMark.margin = 5;
+buttonMark.width = 120;
+```
+
+
+
+For more examples, take a look at the demo project in this repository.
+
+## License
+
+This code is distributed under the terms and conditions of the [MIT license](LICENSE). 

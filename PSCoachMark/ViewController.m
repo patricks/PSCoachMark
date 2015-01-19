@@ -60,7 +60,7 @@
     infoMark.width = 250;
     infoMark.height = 100;
     
-    // hide after 3 seconds
+    // hide after 3 seconds with animation
     [infoMark hideWithAnimation:YES afterDelay:3];
 }
 
