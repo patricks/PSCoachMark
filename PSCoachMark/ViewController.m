@@ -30,24 +30,24 @@
                                   NSForegroundColorAttributeName : [UIColor whiteColor]
                                 };
     
-    NSString *firstLine = @"It's ok to close the app.";
-    NSString *secondLine = @"We'll notify you about your cab.";
+    NSString *firstLine = @"This is the first line.";
+    NSString *secondLine = @"This is the second line.";
     
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", firstLine, secondLine] attributes:attributes];
-    NSAttributedString *buttonString = [[NSAttributedString alloc] initWithString:@"Set pickup location with pin" attributes:attributes];
+    NSAttributedString *buttonString = [[NSAttributedString alloc] initWithString:@"Click Me" attributes:attributes];
     NSAttributedString *labelString = [[NSAttributedString alloc] initWithString:@"Label String" attributes:attributes];
     
     _buttonMark = [PSCoachMark showCoachMarkAddedTo:_infoButton withAttributedText:buttonString withMode:PSCoachMarkModeAbove];
     _buttonMark.markColor = testBlue;
     _buttonMark.margin = 5;
-    _buttonMark.width = 220;
+    _buttonMark.width = 120;
     
     _labelMark = [PSCoachMark showCoachMarkAddedTo:_infoLabel withAttributedText:labelString withMode:PSCoachMarkModeAbove];
     _buttonMark.markColor = testBlue;
     
     PSCoachMark *infoMark = [PSCoachMark showCoachMarkAddedTo:self.view withAttributedText:attributedString withMode:PSCoachMarkModeNormal];
     infoMark.markColor = testBlue;
-    infoMark.width = 300;
+    infoMark.width = 250;
     infoMark.height = 100;
     
     [infoMark hideWithAnimation:YES afterDelay:3];
