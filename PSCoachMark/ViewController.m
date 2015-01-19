@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Define attributed strings
     UIFont *standardFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0];
     UIColor *testBlue = [UIColor colorWithRed:0.094 green:0.498 blue:0.988 alpha:1.000];
     
@@ -30,26 +31,36 @@
                                   NSForegroundColorAttributeName : [UIColor whiteColor]
                                 };
     
-    NSString *firstLine = @"This is the first line.";
+    NSString *firstLine = @"Info Coach Mark";
     NSString *secondLine = @"This is the second line.";
     
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", firstLine, secondLine] attributes:attributes];
-    NSAttributedString *buttonString = [[NSAttributedString alloc] initWithString:@"Click Me" attributes:attributes];
-    NSAttributedString *labelString = [[NSAttributedString alloc] initWithString:@"Label String" attributes:attributes];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", firstLine, secondLine]
+                                                                           attributes:attributes];
     
+    NSAttributedString *buttonString = [[NSAttributedString alloc] initWithString:@"Click Me"
+                                                                       attributes:attributes];
+    
+    NSAttributedString *labelString = [[NSAttributedString alloc] initWithString:@"Label String"
+                                                                      attributes:attributes];
+    
+    
+    // Create coach mark for the UIButton
     _buttonMark = [PSCoachMark showCoachMarkAddedTo:_infoButton withAttributedText:buttonString withMode:PSCoachMarkModeAbove];
     _buttonMark.markColor = testBlue;
     _buttonMark.margin = 5;
     _buttonMark.width = 120;
     
+    // Create the coach mark for the UILabel
     _labelMark = [PSCoachMark showCoachMarkAddedTo:_infoLabel withAttributedText:labelString withMode:PSCoachMarkModeAbove];
-    _buttonMark.markColor = testBlue;
     
+    
+    // Create a normal coach mark
     PSCoachMark *infoMark = [PSCoachMark showCoachMarkAddedTo:self.view withAttributedText:attributedString withMode:PSCoachMarkModeNormal];
     infoMark.markColor = testBlue;
     infoMark.width = 250;
     infoMark.height = 100;
     
+    // hide after 3 seconds
     [infoMark hideWithAnimation:YES afterDelay:3];
 }
 
